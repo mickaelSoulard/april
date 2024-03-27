@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+		{% block title %}Liste{% endblock %}
+		 
+		{% block body %}
+			{% if app.user %}
+				<main class="form-signin">
+					<div class="container">
+						<h1 class="h3 mb-3 fw-normal">Mes clients :</h1>
+						<a class="btn btn-sm btn-primary" href="{{ path('home_add') }}"><span class="icon-plus"></span> Ajouter un client</a>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Prénom</th>
+										<th>Nom</th>
+										<th>Adresse</th>
+										<th>Code postal</th>
+										<th>Ville</th>
+										<th>Email</th>
+										<th>Action(s)</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for customer in customers %}
+										<tr>
+											<td>{{ customer.id }}</td>
+											<td>{{ customer.firstname }}</td>
+											<td>{{ customer.lastname }}</td>
+											<td>{{ customer.adress }}</td>
+											<td>{{ customer.postcode }}</td>
+											<td>{{ customer.city }}</td>
+											<td>{{ customer.email }}</td>
+											<td>
+												<a class="btn btn-sm btn-primary" href="{{ path('home_edit', { 'id': customer.id }) }}"><span class="icon-edit"></span> Modifier</a>
+												{% if 'ROLE_ADMIN' in app.user.roles %}
+													/ <a class="btn btn-sm btn-primary" href="{{ path('home_remove', { 'id': customer.id }) }}"><span class="icon-trash"></span> Supprimer</a>
+												{% endif %}
+												/ <a class="btn btn-sm btn-primary" href="{{ path('home_pdf', { 'id': customer.id }) }}"><span class="icon-trash"></span> PDF</a>
+											</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+					</div>
+				</main>
+			{% endif %}
+		{% endblock %}
