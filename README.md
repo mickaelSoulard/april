@@ -1,0 +1,3 @@
+- module inl_shippingcost est un module presta avec symfony embarqué
+- pour le test j'ai loadé deux fixtures pour la connexion des utilisateurs 1 avec un rôle admin et l'autre avec une rôle user :
+- Les données de connexion se situent depuis la class UserFixtures dans le dossier DataFixtures
