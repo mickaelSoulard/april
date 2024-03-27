@@ -1,0 +1,9 @@
+services:
+    prestashop.module.inl_shippingcost.repository.carrier_rule_repository:
+        class: Module\Inl_shippingcost\Repository\CarrierRuleRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+          - Module\Inl_shippingcost\Entity\CarrierRule
+
+    prestashop.module.inl_shippingcost.presenter.carrier_rule_presenter:
+        class: Module\Inl_shippingcost\Presenter\CarrierRulePresenter

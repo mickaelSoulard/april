@@ -1,0 +1,20 @@
+{  
+    "name": "prestashop/inl_shippingcost",
+    "description": "add rules shipping cost",
+    "license": "AFL-3.0",
+    "authors": [
+        {
+            "name": "INNLOG",
+            "email": "msoulard@innlog.fr"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Module\\Inl_shippingcost\\": "src/"
+      },
+      "config": {
+        "prepend-autoloader": false
+      },
+      "type": "prestashop-module"
+    }
+}

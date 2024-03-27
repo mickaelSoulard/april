@@ -1,0 +1,40 @@
+# @see https://devdocs.prestashop.com/1.7/modules/concepts/controllers/admin-controllers/#how-to-map-an-action-of-your-controller-to-a-uri
+inl_shippingcost_index:
+    path: /inl-shippingcost
+    methods: [GET]
+    defaults:
+        _controller: 'Module\Inl_shippingcost\Controller\Admin\IndexController::indexAction'
+        _legacy_controller: 'AdminInnlog_grid'
+        _legacy_link: 'AdminInnlog_grid'
+        
+inl_shippingcost_create:
+    path: /inl-shippingcost/new
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Module\Inl_shippingcost\Controller\Admin\IndexController::createAction'
+        _legacy_controller: 'AdminInnlog_grid'
+        _legacy_link: 'AdminInnlog_grid'
+        
+inl_shippingcost_edit:
+    path: /inl-shippingcost/edit/{id}
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Module\Inl_shippingcost\Controller\Admin\IndexController::editAction'
+        _legacy_controller: 'AdminInnlog_grid'
+        _legacy_link: 'AdminInnlog_grid'
+        
+inl_shippingcost_delete:
+    path: /inl-shippingcost/delete/{id}
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Module\Inl_shippingcost\Controller\Admin\IndexController::deleteAction'
+        _legacy_controller: 'AdminInnlog_grid'
+        _legacy_link: 'AdminInnlog_grid'
+
+inl_shippingcost_search:
+    path: /inl-shippingcost
+    methods: [POST]
+    defaults:
+        _controller: 'Module\Inl_shippingcost\Controller\Admin\IndexController::searchAction'
+        _legacy_controller: 'AdminInnlog_grid'
+        _legacy_link: 'AdminInnlog_grid:search'

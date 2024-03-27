@@ -1,0 +1,24 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+{% form_theme carrierRule '@PrestaShop/Admin/TwigTemplateForm/prestashop_ui_kit_base.html.twig' %}
+
+{% block content %}
+  {{ form_start(carrierRule) }}
+  <div class="card">
+    <h3 class="card-header">
+      <i class="material-icons">settings</i> {{ 'Créer votre règle'|trans({}, 'Modules.Inl_shippincost.Admin') }}
+    </h3>
+    <div class="card-block row">
+      <div class="card-text">
+        {{ form_widget(carrierRule) }}
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary float-right" id="save-button">
+          {{ 'Save'|trans({}, 'Admin.Actions') }}
+        </button>
+      </div>
+    </div>
+  </div>
+  {{ form_end(carrierRule) }}
+{% endblock %}
